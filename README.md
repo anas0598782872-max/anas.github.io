@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyGuide Palestine PRO 2026</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8; --text-color: #1d3557; --info-box: #caf0f8;
+            --info-border: #00b4d8; --card-bg: #ffffff;
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212; --text-color: #e0e0e0; --info-box: #1e1e1e;
+            --info-border: #90caf9; --card-bg: #1e1e1e;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; transition: 0.3s; padding-bottom: 50px; }
+        
+        .news-ticker { background: #e63946; color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .news-ticker div { display: inline-block; padding-left: 100%; animation: ticker 20s linear infinite; font-weight: bold; }
+        @keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(100%, 0); } }
+
+        .container { padding: 20px; }
+        .school-name { font-size: 22px; color: #e63946; font-weight: bold; text-align: center; margin-top: 15px; }
+        
+        .platform { 
+            display: flex; align-items: center; justify-content: flex-start; 
+            margin: 15px auto; padding: 12px 20px; border-radius: 15px; 
+            width: 90%; max-width: 350px; cursor: pointer; color: #fff; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.2s; 
+        }
+        .platform:hover { transform: scale(1.03); }
+        .platform img { width: 45px; height: 45px; object-fit: contain; margin-left: 20px; background: white; border-radius: 8px; padding: 2px; }
+        .ischool { background: linear-gradient(45deg,#2a9d8f,#52b788); }
+        .teams { background: linear-gradient(45deg,#4c5cc4,#5b5fc7); }
+
+        .info-box { background: var(--info-box); border-right: 5px solid var(--info-border); padding: 15px; margin: 15px auto; width: 95%; max-width: 600px; border-radius: 10px; color: var(--text-color); }
+        .alert-text { color: #e63946; font-weight: bold; text-align: center; margin: 10px 0; display: block; background: #fff3f3; padding: 8px; border-radius: 5px; border: 1px dashed #e63946; font-size: 14px; }
+        .support-text { color: #0077b6; font-weight: bold; text-align: center; margin: 10px 0; display: block; background: #e7f3f9; padding: 10px; border-radius: 8px; font-size: 14px; border: 1px solid #0077b6; text-decoration: none; }
+
+        .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; margin-bottom: 15px; }
+        .btn-link { background: #457b9d; color: white; padding: 10px; text-align: center; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: bold; transition: 0.3s; }
+        .btn-link:hover { background: #1d3557; }
+
+        .generator-box { background: var(--card-bg); padding: 15px; border-radius: 10px; margin: 20px auto; width: 95%; max-width: 600px; text-align: center; border: 2px solid #ced4da; }
+        .gen-pass { font-family: monospace; font-size: 20px; color: #e63946; background: rgba(0,0,0,0.05); padding: 10px; display: block; margin: 10px 0; border-radius: 5px; border: 1px solid #adb5bd; }
+
+        /* تنسيق زر التواصل الجديد */
+        .contact-designer-btn { 
+            background: #e63946; color: white; padding: 15px; border-radius: 10px; 
+            margin: 20px auto; width: 95%; max-width: 600px; text-align: center; 
+            text-decoration: none; display: block; font-weight: bold; transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3); 
+        }
+        .contact-designer-btn:hover { background: #c12e3a; transform: translateY(-2px); }
+
+        button { cursor: pointer; border: none; border-radius: 6px; font-weight: bold; transition: 0.3s; }
+        .btn-gen { background: #1d3557; color: white; padding: 10px; width: 100%; }
+        .copyBtn { background: #457b9d; color: white; padding: 10px; margin-top: 10px; width: 100%; }
+
+        .whatsapp-btn { position: fixed; bottom: 20px; left: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+        
+        .result-container { display: none; background: rgba(0,0,0,0.05); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid #ddd; }
+        .id-status { font-size: 13px; margin-top: 5px; display: block; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="news-ticker">
+    <div>تنبيه: يرجى التأكد من تغيير كلمة المرور فور دخولك للحساب - المصمم: أنس الجعل</div>
+</div>
+
+<div class="container">
+    <div class="school-name">مدرسة عاشر أ 25</div>
+    <h2 style="text-align:center;">StudyGuide Palestine PRO</h2>
+
+    <button id="darkModeBtn" onclick="toggleDarkMode()" style="display:block; margin:10px auto; padding:10px 20px; background:var(--text-color); color:var(--bg-color); border: 1px solid #ccc;">🌓 تبديل الوضع</button>
+
+    <div class="platform ischool" onclick="showISchool()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Eschool_logo.png" alt="iSchool">
+        <span>منصة iSchool Palestine</span>
+    </div>
+    
+    <div class="platform teams" onclick="showTeams()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_Office_Teams_%282019%E2%80%93present%29.svg" alt="Teams">
+        <span>Microsoft Teams 2026</span>
+    </div>
+
+    <div id="info" class="info-box" style="display:none;"></div>
+
+    <div class="generator-box">
+        <h3>🔐 مولد كلمات المرور الآمنة</h3>
+        <span id="passDisplay" class="gen-pass">********</span>
+        <button class="btn-gen" onclick="generatePassword()">توليد كلمة سر جديدة</button>
+        <button class="copyBtn" style="background:#6c757d" onclick="copyGenPass()">نسخ كلمة السر</button>
+    </div>
+
+    <a href="https://wa.me/972598782836?text=مرحباً%20أنس،%20لدي%20اقتراح/مشكلة%20بخصوص%20تطبيق%20StudyGuide" class="contact-designer-btn" target="_blank">
+        📲 تواصل مع المصمم للإبلاغ عن مشكلة أو تقديم اقتراح
+    </a>
+
+    <p class="designer" style="text-align:center; margin-top:30px;">المصمم: أنس الجعل | 𝑨𝒏𝒂𝒔 𝑨𝒍-𝒋𝒂𝒂𝒍𓂆</p>
+</div>
+
+<a href="https://wa.me/972598782836" class="whatsapp-btn" target="_blank">
+    <svg viewBox="0 0 24 24" width="35" height="35" fill="white"><path d="M12.031 6.172c-2.203 0-4.391.547-6.328 1.594l-.453.25L3 7.375l.656 2.312-.266.422C2.328 11.797 1.813 13.562 1.813 15.422c0 5.625 4.594 10.188 10.219 10.188 2.188 0 4.312-.703 6.078-1.984l.438-.312 2.375.625-.625-2.312.312-.453c1.266-1.844 1.938-4.016 1.938-6.25 0-5.625-4.594-10.188-10.219-10.188zm5.953 14.5c-.25.719-1.25 1.313-1.719 1.406-.469.094-1.078.125-1.734-.094-.422-.125-1.016-.312-1.734-.625-3.047-1.313-5.047-4.391-5.188-4.594-.156-.203-1.25-1.656-1.25-3.156 0-1.5.781-2.234 1.062-2.531.281-.313.625-.391.828-.391.219 0 .438 0 .625.016.203.016.469-.078.734.563.266.656.922 2.25 1 2.422.078.172.125.375.016.594-.109.219-.172.359-.344.563-.172.188-.359.422-.516.563-.172.172-.344.359-.156.688.188.313.828 1.359 1.781 2.203.125.109.25.219.375.313.906.75 1.438.938 1.734 1.078.297.141.469.125.641-.078.172-.203.734-.859.938-1.156.203-.313.406-.25.688-.156.281.094 1.781.844 2.094 1 .313.156.516.234.594.359.078.141.078.797-.172 1.516z"></path></svg>
+</a>
+
+<script>
+function isValidPalestineID(id) {
+    if (!/^\d{9}$/.test(id)) return false;
+    let sum = 0;
+    for (let i = 0; i < 8; i++) {
+        let num = parseInt(id[i]) * ((i % 2 === 0) ? 1 : 2);
+        if (num > 9) num -= 9;
+        sum += num;
+    }
+    return (sum + parseInt(id[8])) % 10 === 0;
+}
+
+function toggleDarkMode() {
+    const theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    document.getElementById('darkModeBtn').innerText = theme === 'dark' ? '☀️ الوضع النهاري' : '🌙 الوضع الليلي';
+}
+document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+
+function generatePassword() {
+    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+    let pass = "";
+    for (let i = 0; i < 12; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+    document.getElementById('passDisplay').innerText = pass;
+}
+
+function copyGenPass() {
+    const p = document.getElementById('passDisplay').innerText;
+    if(p === "********") return;
+    navigator.clipboard.writeText(p); alert("تم نسخ كلمة السر الجديدة");
+}
+
+function showISchool() {
+    const info = document.getElementById('info'); info.style.display = 'block';
+    info.innerHTML = `
+        <h3>iSchool Palestine</h3>
+        <span class="alert-text">💡 ملاحظة: اسم المستخدم هو نفسه كلمة المرور (رقم الهوية).</span>
+        
+        <div class="links-grid">
+            <a href="https://www.eschool.edu.ps" target="_blank" class="btn-link">🌐 الموقع الرسمي</a>
+            <a href="https://eschoolps.ar.uptodown.com/android#" target="_blank" class="btn-link">📲 تطبيق Android</a>
+            <a href="https://moe.edu.ps/m/3784" target="_blank" class="btn-link" style="grid-column: span 2; background:#2a9d8f;">📖 الدليل الإرشادي الرسمي (PDF)</a>
+        </div>
+        
+        <hr>
+        <input type="text" id="idISchool" maxlength="9" placeholder="أدخل رقم الهوية (9 أرقام)" style="width:100%; padding:12px; border-radius:5px; border:2px solid #ccc; box-sizing:border-box;">
+        <span id="statusISchool" class="id-status"></span>
+
+        <div id="resISchool" class="result-container">
+            <p>👤 اسم المستخدم: <strong id="uI">-</strong></p>
+            <p>🔑 كلمة المرور الافتراضية: <strong id="pI">-</strong></p>
+            <button class="copyBtn" onclick="copyTxt('uI', 'pI')">نسخ البيانات</button>
+        </div>
+    `;
+    document.getElementById('idISchool').oninput = function() {
+        const val = this.value.trim();
+        const status = document.getElementById('statusISchool');
+        const res = document.getElementById('resISchool');
+        
+        if(val.length === 9) {
+            if(isValidPalestineID(val)) {
+                status.innerText = "✅ رقم هوية صحيح"; status.style.color = "green";
+                document.getElementById('uI').innerText = val;
+                document.getElementById('pI').innerText = val;
+                res.style.display = 'block';
+            } else {
+                status.innerText = "❌ رقم الهوية غير صحيح، تأكد من الأرقام."; status.style.color = "red";
+                res.style.display = 'none';
+            }
+        } else { status.innerText = ""; res.style.display = 'none'; }
+    };
+}
+
+function showTeams() {
+    const info = document.getElementById('info'); info.style.display = 'block';
+    info.innerHTML = `
+        <h3>Microsoft Teams 2026</h3>
+        <span class="alert-text">⚠️ يرجى التأكد من تغيير كلمة المرور بعد الدخول الأول.</span>
+        
+        <a href="https://wa.me/972598019795" class="support-text" target="_blank">
+            💬 للدعم الفني (أ. نور الدين): <br> +972 59-801-9795
+        </a>
+
+        <div class="links-grid">
+            <a href="https://www.microsoft.com/ar-ww/microsoft-teams/log-in" target="_blank" class="btn-link" style="background:#4c5cc4;">فتح ويب تيمز 2026</a>
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.teams" target="_blank" class="btn-link" style="background:#4c5cc4;">تحميل للأندرويد (Google Play)</a>
+        </div>
+
+        <input type="text" id="idTeams" maxlength="9" placeholder="أدخل رقم الهوية الشخصي" style="width:100%; padding:12px; border-radius:5px; border:2px solid #ccc; box-sizing:border-box;">
+        <span id="statusTeams" class="id-status"></span>
+
+        <div id="resTeams" class="result-container" style="border-color:#4c5cc4;">
+            <p>📧 البريد الوزاري: <strong id="eT">-</strong></p>
+            <p>🔑 كلمة السر المؤقتة: <strong id="pT">-</strong></p>
+            <button class="copyBtn" style="background:#4c5cc4;" onclick="copyTxt('eT', 'pT')">نسخ بيانات Teams</button>
+        </div>
+    `;
+    document.getElementById('idTeams').oninput = function() {
+        const id = this.value.trim();
+        const status = document.getElementById('statusTeams');
+        const res = document.getElementById('resTeams');
+
+        if(id.length === 9) {
+            if(isValidPalestineID(id)) {
+                status.innerText = "✅ رقم هوية صحيح"; status.style.color = "green";
+                document.getElementById('eT').innerText = id + "@vgaza.edu.ps";
+                document.getElementById('pT').innerText = "Gaza@" + id.substring(0, 5);
+                res.style.display = 'block';
+            } else {
+                status.innerText = "❌ رقم هوية غير منطقي"; status.style.color = "red";
+                res.style.display = 'none';
+            }
+        } else { status.innerText = ""; res.style.display = 'none'; }
+    };
+}
+
+function copyTxt(id1, id2) {
+    const t1 = document.getElementById(id1).innerText; const t2 = document.getElementById(id2).innerText;
+    if(t1 === "-") return alert("أدخل رقم هوية صحيح أولاً");
+    navigator.clipboard.writeText(`الحساب: ${t1}\nالسر: ${t2}`); alert("تم النسخ بنجاح!");
+}
+</script>
+</body>
+</html>
